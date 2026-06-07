@@ -48,6 +48,21 @@ This project was created to demonstrate practical experience with GitOps workflo
 | Secret Detection         | Gitleaks       |
 | IaC Security             | Checkov        |
 
+## GitOps Deployment Flow
+Sample-Microservice
+        ↓
+GitHub Actions CI Pipeline
+        ↓
+Docker Hub
+        ↓
+Gitops-Platform-Config
+        ↓
+ArgoCD
+        ↓
+Kind Kubernetes Cluster
+        ↓
+Prometheus + Grafana
+
 ## Repository Structure
 
 ### Sample-Microservice

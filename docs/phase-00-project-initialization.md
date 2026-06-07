@@ -104,11 +104,28 @@ Terraform
 
 ## Deliverables
 
-To be completed.
+### Completed Deliverables
+
+* Project documentation repository established.
+* Architecture planning completed.
+* Screenshot strategy established.
+* Node.js Express selected as the application framework.
+* Application endpoint strategy defined.
+* GitOps repository initialized.
+* Microservice repository initialized.
+* Documentation structure created for all project phases.
 
 ## Validation
 
-To be completed.
+### Validation Evidence
+
+The following validation activities were completed:
+
+* Documentation repository structure verified.
+* GitOps repository structure verified.
+* Sample microservice repository structure verified.
+* Screenshot evidence collected and stored.
+* Initial architecture decisions documented.
 
 ## Lessons Learned
 
