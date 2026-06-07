@@ -1,0 +1,140 @@
+# Task 02 - ArgoCD Installation and Configuration
+
+## Objective
+
+Install and configure ArgoCD as the GitOps controller for the Kubernetes platform.
+
+ArgoCD will continuously monitor the GitOps repository and synchronize Kubernetes resources automatically, enabling a declarative deployment workflow.
+
+## Why ArgoCD?
+
+ArgoCD provides:
+
+* Continuous synchronization between Git and Kubernetes
+* Automated deployment reconciliation
+* Deployment visibility
+* Rollback capabilities
+* GitOps-based change management
+
+## Implementation Steps
+
+### Step 1: Prepare Platform Namespaces
+
+Dedicated namespaces were created to provide logical separation between platform services and application workloads.
+
+Namespaces created:
+
+* argocd
+* monitoring
+* dev
+* staging
+* prod
+
+Command used:
+
+```bash
+kubectl create namespace argocd
+kubectl create namespace monitoring
+kubectl create namespace dev
+kubectl create namespace staging
+kubectl create namespace prod
+```
+
+Validation:
+
+```bash
+kubectl get ns
+```
+
+All namespaces were successfully created and reached the Active state.
+
+### Step 2: Install ArgoCD
+
+ArgoCD was installed into the dedicated `argocd` namespace using the official installation manifest.
+
+Command used:
+
+```bash
+kubectl apply -n argocd \
+-f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Installed components:
+
+* ArgoCD Server
+* ArgoCD Repository Server
+* ArgoCD Application Controller
+* ArgoCD ApplicationSet Controller
+* ArgoCD Notifications Controller
+* ArgoCD Redis
+* ArgoCD Dex Server
+
+Validation command:
+
+```bash
+kubectl get pods -n argocd
+```
+
+All ArgoCD components successfully reached the Running state.
+
+## Validation
+
+## Validation
+
+The following validation checks were performed:
+
+### Namespace Validation
+
+```bash
+kubectl get ns
+```
+
+Verified namespaces:
+
+* argocd
+* monitoring
+* dev
+* staging
+* prod
+
+### ArgoCD Component Validation
+
+```bash
+kubectl get pods -n argocd
+```
+
+Verified:
+
+* argocd-server
+* argocd-repo-server
+* argocd-application-controller
+* argocd-applicationset-controller
+* argocd-dex-server
+* argocd-redis
+* argocd-notifications-controller
+
+All components reached the Running state.
+
+### ArgoCD UI Validation
+
+Port forwarding was established:
+
+```bash
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+The ArgoCD web interface was successfully accessed through:
+
+```text
+https://localhost:8080
+```
+
+Authentication using the initial admin credentials was successful and the dashboard loaded correctly.
+
+## Screenshots
+
+To be completed during implementation.
+
+## Lessons Learned
+
+To be completed during implementation.
