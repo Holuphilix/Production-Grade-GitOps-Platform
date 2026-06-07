@@ -6,8 +6,6 @@ This project demonstrates the implementation of a production-grade GitOps platfo
 
 The objective is to simulate modern cloud-native deployment workflows commonly used by DevOps and Platform Engineering teams while maintaining a fully reproducible local development environment.
 
----
-
 ## Project Objectives
 
 The primary objectives of this project are:
@@ -21,23 +19,17 @@ The primary objectives of this project are:
 * Demonstrate Infrastructure as Code and GitOps best practices.
 * Produce operational evidence suitable for portfolio and interview discussions.
 
----
-
 ## Why This Project
 
 Modern organizations increasingly adopt GitOps as the preferred deployment strategy for Kubernetes workloads. GitOps improves deployment consistency, auditability, rollback capabilities, and operational reliability by making Git the single source of truth for infrastructure and application configuration.
 
 This project was created to demonstrate practical experience with GitOps workflows, Kubernetes operations, CI/CD automation, DevSecOps practices, and observability tooling within a realistic platform engineering environment.
 
----
-
 ## Solution Architecture
 
 The platform follows a GitOps-based deployment model where application source code, deployment configuration, and project documentation are maintained in separate repositories.
 
 Application changes are built and validated through GitHub Actions. Container images are published to Docker Hub and deployment manifests are updated in the GitOps configuration repository. ArgoCD continuously monitors the GitOps repository and synchronizes changes to a multi-node Kubernetes cluster running on Kind. Platform observability is provided through Prometheus, Grafana, and Alertmanager.
-
----
 
 ## Technology Stack
 
@@ -57,8 +49,6 @@ Application changes are built and validated through GitHub Actions. Container im
 | Vulnerability Scanning   | Trivy          |
 | Secret Detection         | Gitleaks       |
 | IaC Security             | Checkov        |
-
----
 
 ## GitOps Deployment Flow
 
@@ -84,8 +74,6 @@ Kind Kubernetes Cluster
 Prometheus + Grafana + Alertmanager
 ```
 
----
-
 ## Repository Structure
 
 ### Sample-Microservice
@@ -99,8 +87,6 @@ Contains Kubernetes manifests, Kustomize overlays, ArgoCD application definition
 ### Production-Grade-GitOps-Platform
 
 Contains architecture documentation, implementation guides, operational evidence, screenshots, diagrams, and project documentation.
-
----
 
 ## Project Phases
 
@@ -126,19 +112,82 @@ Contains architecture documentation, implementation guides, operational evidence
 
 ### Phase 10 – Final Validation and Documentation
 
----
+## Current Project Status
+
+Current Progress:
+
+* ✅ Phase 00 – Project Initialization
+* ✅ Phase 01 – Local Kubernetes Platform Setup
+* 🔄 Phase 02 – ArgoCD Installation and Configuration
+* ⏳ Phase 03 – Sample Application Development
+* ⏳ Phase 04 – CI Pipeline Implementation
+* ⏳ Phase 05 – GitOps Repository Configuration
+* ⏳ Phase 06 – Automated GitOps Deployments
+* ⏳ Phase 07 – Multi-Environment Management
+* ⏳ Phase 08 – Monitoring and Observability
+* ⏳ Phase 09 – Security Scanning and Compliance
+* ⏳ Phase 10 – Final Validation and Documentation
+
+## Completed Milestones
+
+### Phase 00 – Project Initialization
+
+Completed:
+
+* Repository strategy established
+* Documentation framework created
+* Architecture planning completed
+* GitOps workflow defined
+* Project repositories initialized
+
+### Phase 01 – Local Kubernetes Platform Setup
+
+Completed:
+
+* Multi-node Kind cluster deployed
+* 1 Control Plane Node provisioned
+* 2 Worker Nodes provisioned
+* Kubernetes cluster validation completed
+* Core system components validated
+* Operational evidence collected
+
+Cluster Information:
+
+* Cluster Name: gitops-platform
+* Kubernetes Version: v1.34.0
+* Control Plane Nodes: 1
+* Worker Nodes: 2
+
+## Operational Evidence
+
+| Validation Item                  | Status |
+| -------------------------------- | ------ |
+| Project Documentation Framework  | ✅      |
+| Architecture Planning            | ✅      |
+| Kind Cluster Deployment          | ✅      |
+| Kubernetes Node Validation       | ✅      |
+| Kubernetes System Pod Validation | ✅      |
+| Docker Node Validation           | ✅      |
+| ArgoCD Installation              | ⏳      |
+| GitHub Actions Pipeline          | ⏳      |
+| GitOps Synchronization           | ⏳      |
+| Monitoring Stack                 | ⏳      |
+| Security Scanning                | ⏳      |
 
 ## Architecture Diagram
 
-Architecture diagrams will be created using Draw.io during the implementation phase and will illustrate:
+The architecture diagrams for this project will be created and maintained throughout the implementation lifecycle.
+
+Planned diagrams include:
 
 * GitOps deployment workflow
-* ArgoCD synchronization flow
 * CI/CD pipeline architecture
+* ArgoCD synchronization flow
+* Kubernetes namespace architecture
 * Monitoring and observability architecture
-* Multi-environment deployment strategy
+* Multi-environment deployment architecture
 
----
+> Diagram images will be embedded here as they become available.
 
 ## Documentation Structure
 
@@ -158,15 +207,13 @@ Detailed implementation documentation is maintained within the `docs/` directory
 | task-09-security-scanning.md       | Security scanning implementation              |
 | task-10-final-validation.md        | Final platform validation and project closure |
 
----
-
 ## Implementation Roadmap
 
 | Phase    | Description                           | Status         |
 | -------- | ------------------------------------- | -------------- |
 | Phase 00 | Project Initialization                | ✅ Completed    |
-| Phase 01 | Local Kubernetes Platform Setup       | 🔄 In Progress |
-| Phase 02 | ArgoCD Installation and Configuration | ⏳ Pending      |
+| Phase 01 | Local Kubernetes Platform Setup       | ✅ Completed    |
+| Phase 02 | ArgoCD Installation and Configuration | 🔄 In Progress |
 | Phase 03 | Sample Application Development        | ⏳ Pending      |
 | Phase 04 | CI Pipeline Implementation            | ⏳ Pending      |
 | Phase 05 | GitOps Repository Configuration       | ⏳ Pending      |
@@ -176,19 +223,13 @@ Detailed implementation documentation is maintained within the `docs/` directory
 | Phase 09 | Security Scanning and Compliance      | ⏳ Pending      |
 | Phase 10 | Final Validation and Documentation    | ⏳ Pending      |
 
----
-
 ## Screenshots and Operational Evidence
 
 Operational evidence, screenshots, validation outputs, architecture diagrams, and deployment verification artifacts will be captured and documented throughout the project lifecycle.
 
----
-
 ## Lessons Learned
 
 Lessons learned and operational insights will be documented throughout the implementation process.
-
----
 
 ## Future Enhancements
 
@@ -201,8 +242,6 @@ Potential future enhancements include:
 * Advanced Grafana dashboards
 * Centralized logging using Loki
 * GitHub Container Registry support
-
----
 
 ## References
 
