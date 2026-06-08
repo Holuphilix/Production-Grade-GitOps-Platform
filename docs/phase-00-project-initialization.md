@@ -35,9 +35,25 @@ Master documentation repository containing architecture diagrams, implementation
 
 To be completed.
 
+### Screenshot Evidence: Project Documentation Structure
+
+The documentation repository structure was organized to support phase-based implementation guides, task-level evidence, and operational validation artifacts.
+
+![Project Documentation Structure](../screenshots/task-01-kind-cluster/project-documentation-structure.png)
+
+Caption: Project Documentation Structure
+
 ## Documentation Strategy
 
 To be completed.
+
+### Screenshot Evidence: Initial README Foundation
+
+The initial project README foundation was established to define the purpose, scope, and structure of the production-grade GitOps platform documentation repository.
+
+![Initial Project README Foundation](../screenshots/task-01-kind-cluster/phase-00-project-readme-foundation.png)
+
+Caption: Initial Project README Foundation
 
 ## Screenshot Strategy
 
@@ -59,6 +75,14 @@ Endpoints:
 Purpose:
 
 The application serves as a lightweight microservice used to demonstrate GitOps deployment workflows, CI/CD automation, security scanning, observability integration, and multi-environment Kubernetes deployments.
+
+#### Screenshot Evidence: Application Architecture Planning
+
+The application architecture was planned around a lightweight Node.js Express microservice with operational endpoints for health checks and Prometheus metrics.
+
+![Application Architecture Planning](../screenshots/task-01-kind-cluster/phase-00-application-architecture.png)
+
+Caption: Application Architecture Planning
 
 ### Container Registry
 
@@ -86,6 +110,14 @@ Production
 
 Kustomize
 
+#### Screenshot Evidence: GitOps Repository Structure Planning
+
+The GitOps configuration repository structure was planned to support declarative Kubernetes manifests, Kustomize overlays, and ArgoCD application definitions.
+
+![GitOps Repository Structure Planning](../screenshots/task-01-kind-cluster/phase-00-gitops-config-structure.png)
+
+Caption: GitOps Repository Structure Planning
+
 ### Monitoring Stack
 
 Prometheus
@@ -101,6 +133,14 @@ Checkov
 ### Infrastructure as Code
 
 Terraform
+
+#### Screenshot Evidence: Sample Microservice Repository Structure Planning
+
+The sample microservice repository structure was planned to separate application source code, runtime configuration, containerization, and CI automation.
+
+![Sample Microservice Repository Structure Planning](../screenshots/task-01-kind-cluster/phase-00-sample-microservice-structure.png)
+
+Caption: Sample Microservice Repository Structure Planning
 
 ## Deliverables
 

@@ -58,6 +58,14 @@ kind create cluster \
   --config kind/kind-cluster.yaml
 ```
 
+#### Screenshot Evidence: Successful Kind Cluster Creation
+
+The cluster creation output confirmed that the local multi-node Kind Kubernetes platform was provisioned successfully.
+
+![Successful Kind Cluster Creation](../screenshots/task-01-kind-cluster/task-01-kind-cluster-created.png)
+
+Caption: Successful Kind Cluster Creation
+
 ### Step 4: Validate Cluster Health
 
 Validation commands:
@@ -67,6 +75,22 @@ kubectl get nodes -o wide
 kubectl get pods -A
 docker ps
 ```
+
+#### Screenshot Evidence: Multi-Node Kubernetes Cluster Verification
+
+The Docker node validation confirmed that the Kind environment was running one control plane node and two worker nodes.
+
+![Multi-Node Kubernetes Cluster Verification](../screenshots/task-01-kind-cluster/task-01-kind-docker-nodes.png)
+
+Caption: Multi-Node Kubernetes Cluster Verification
+
+#### Screenshot Evidence: Kubernetes System Pods Validation
+
+The Kubernetes system pod validation confirmed that core cluster components were initialized and running across the platform.
+
+![Kubernetes System Pods Validation](../screenshots/task-01-kind-cluster/task-01-cluster-system-pods.png)
+
+Caption: Kubernetes System Pods Validation
 
 Validation confirmed:
 
@@ -81,7 +105,7 @@ To be completed during implementation.
 
 ## Screenshots
 
-To be completed during implementation.
+The screenshots embedded in the implementation and validation sections above provide evidence for cluster creation, node-level verification, and Kubernetes system component health.
 
 ## Lessons Learned
 

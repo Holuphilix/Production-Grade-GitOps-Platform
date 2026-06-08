@@ -48,6 +48,14 @@ kubectl get ns
 
 All namespaces were successfully created and reached the Active state.
 
+#### Screenshot Evidence: Platform Namespace Preparation
+
+The namespace validation confirmed that the platform, monitoring, and application environment namespaces were created successfully.
+
+![Platform Namespace Preparation](../screenshots/task-02-argocd/task-02-platform-namespaces.png)
+
+Caption: Platform Namespace Preparation
+
 ### Step 2: Install ArgoCD
 
 ArgoCD was installed into the dedicated `argocd` namespace using the official installation manifest.
@@ -76,6 +84,14 @@ kubectl get pods -n argocd
 ```
 
 All ArgoCD components successfully reached the Running state.
+
+#### Screenshot Evidence: ArgoCD Components Running Successfully
+
+The ArgoCD pod validation confirmed that all controller, server, repository, Redis, Dex, ApplicationSet, and notification components were running in the `argocd` namespace.
+
+![ArgoCD Components Running Successfully](../screenshots/task-02-argocd/task-02-argocd-components-running.png)
+
+Caption: ArgoCD Components Running Successfully
 
 ## Validation
 
@@ -131,9 +147,17 @@ https://localhost:8080
 
 Authentication using the initial admin credentials was successful and the dashboard loaded correctly.
 
+#### Screenshot Evidence: ArgoCD Dashboard Access Validation
+
+The dashboard validation confirmed that the ArgoCD UI was reachable through the local port-forward and that authentication completed successfully.
+
+![ArgoCD Dashboard Access Validation](../screenshots/task-02-argocd/task-02-argocd-dashboard-login.png)
+
+Caption: ArgoCD Dashboard Access Validation
+
 ## Screenshots
 
-To be completed during implementation.
+The screenshots embedded above provide validation evidence for namespace preparation, ArgoCD component readiness, and dashboard access.
 
 ## Lessons Learned
 
