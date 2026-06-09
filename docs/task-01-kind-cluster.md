@@ -101,7 +101,18 @@ Validation confirmed:
 
 ## Validation
 
-To be completed during implementation.
+The Kind cluster was successfully deployed with:
+
+- 1 Control Plane node
+- 2 Worker nodes
+- All nodes in Ready state
+- Core Kubernetes system pods running successfully
+
+Validation commands:
+
+kubectl get nodes
+kubectl get pods -A
+docker ps
 
 ## Screenshots
 

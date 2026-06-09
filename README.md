@@ -121,8 +121,8 @@ Current Progress:
 * ✅ Phase 02 – ArgoCD Installation and Configuration
 * ✅ Phase 03 – Sample Application Development
 * ✅ Phase 04 – CI Pipeline Implementation
-* 🔄 Phase 05 – GitOps Repository Configuration
-* ⏳ Phase 06 – Automated GitOps Deployments
+* ✅ Phase 05 – GitOps Repository Configuration
+* 🔄 Phase 06 – Automated GitOps Deployments
 * ⏳ Phase 07 – Multi-Environment Management
 * ⏳ Phase 08 – Monitoring and Observability
 * ⏳ Phase 09 – Security Scanning and Compliance
@@ -267,8 +267,8 @@ Detailed implementation documentation is maintained within the `docs/` directory
 | Phase 02 | ArgoCD Installation and Configuration | ✅ Completed    |
 | Phase 03 | Sample Application Development        | ✅ Completed    |
 | Phase 04 | CI Pipeline Implementation            | ✅ Completed    |
-| Phase 05 | GitOps Repository Configuration       | 🔄 In Progress |
-| Phase 06 | Automated GitOps Deployments          | ⏳ Pending      |
+| Phase 05 | GitOps Repository Configuration       | ✅ Completed    |
+| Phase 06 | Automated GitOps Deployments          | 🔄 In Progress |
 | Phase 07 | Multi-Environment Management          | ⏳ Pending      |
 | Phase 08 | Monitoring and Observability          | ⏳ Pending      |
 | Phase 09 | Security Scanning and Compliance      | ⏳ Pending      |
