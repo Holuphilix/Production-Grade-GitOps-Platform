@@ -95,8 +95,6 @@ Caption: ArgoCD Components Running Successfully
 
 ## Validation
 
-## Validation
-
 The following validation checks were performed:
 
 ### Namespace Validation
