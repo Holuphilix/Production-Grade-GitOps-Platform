@@ -1,19 +1,38 @@
-# Task 03 – Sample Microservice Development
+# 🚀 Task 03 - Sample Microservice Development
 
-## Objective
+## 🎯 Objective
 
 Develop a lightweight Node.js Express microservice that will serve as the workload deployed through the GitOps platform.
 
 The application exposes operational endpoints for service validation and Prometheus monitoring.
 
-## Technology Stack
+## 📖 Background
 
+The sample microservice provides a lightweight application workload for containerization, CI/CD validation, GitOps deployment, monitoring, and security scanning.
+
+## 🏗️ Architecture Diagram
+
+![Task 03 - Sample Microservice Development Diagram](../diagrams/task-03-sample-microservice-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 03 - sample microservice development.
+
+## 📋 Prerequisites
+
+* Node.js application files available.
+* Docker installed locally.
+* Application dependencies installed.
+* Local port access available for endpoint validation.
+
+## ⚙️ Implementation Steps
+
+Implementation details are documented in the technology stack, endpoint, validation, and container validation sections below.
+
+## Technology Stack
 * Node.js
 * Express
 * Prometheus Client Library (prom-client)
 
 ## Application Endpoints
-
 ### GET /
 
 Returns application metadata.
@@ -44,7 +63,30 @@ Example response:
 
 Exposes Prometheus metrics for monitoring and observability.
 
-## Validation
+## Container Validation
+The microservice was containerized to support Kubernetes deployment through the GitOps platform. Docker validation confirmed that the image built successfully and that the containerized application could run locally.
+
+### Screenshot Evidence: Docker Image Build Validation
+
+The Docker image build validation confirmed that the application container image was built successfully from the microservice source code.
+
+![Docker Image Build Validation](../screenshots/task-03-microservice/task-03-docker-image-built.png)
+
+Caption: Docker Image Build Validation
+
+### Screenshot Evidence: Docker Container Runtime Validation
+
+The Docker container runtime validation confirmed that the built image could start successfully as a running container.
+
+![Docker Container Runtime Validation](../screenshots/task-03-microservice/task-03-docker-container-running.png)
+
+Caption: Docker Container Runtime Validation
+
+## ⚙️ Commands Executed
+
+Commands executed are documented throughout the validation sections, including application endpoint checks, Docker image build validation, and container runtime validation.
+
+## ✅ Validation
 
 Application started successfully:
 
@@ -100,26 +142,52 @@ The metrics endpoint validation confirmed that the service exposed Prometheus-co
 
 Caption: Prometheus Metrics Endpoint Validation
 
-## Container Validation
+## 📸 Screenshots
 
-The microservice was containerized to support Kubernetes deployment through the GitOps platform. Docker validation confirmed that the image built successfully and that the containerized application could run locally.
+### Task 03 Root Endpoint
 
-### Screenshot Evidence: Docker Image Build Validation
+![Task 03 Root Endpoint](../screenshots/task-03-microservice/task-03-root-endpoint.png)
 
-The Docker image build validation confirmed that the application container image was built successfully from the microservice source code.
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
 
-![Docker Image Build Validation](../screenshots/task-03-microservice/task-03-docker-image-built.png)
+### Task 03 Health Endpoint
 
-Caption: Docker Image Build Validation
+![Task 03 Health Endpoint](../screenshots/task-03-microservice/task-03-health-endpoint.png)
 
-### Screenshot Evidence: Docker Container Runtime Validation
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
 
-The Docker container runtime validation confirmed that the built image could start successfully as a running container.
+### Task 03 Metrics Endpoint
 
-![Docker Container Runtime Validation](../screenshots/task-03-microservice/task-03-docker-container-running.png)
+![Task 03 Metrics Endpoint](../screenshots/task-03-microservice/task-03-metrics-endpoint.png)
 
-Caption: Docker Container Runtime Validation
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
 
-## Screenshots
+### Task 03 Application Running
 
-The screenshots embedded in the validation sections above provide evidence for local application startup, endpoint behavior, Prometheus metrics exposure, Docker image creation, and container runtime validation.
+![Task 03 Application Running](../screenshots/task-03-microservice/task-03-application-running.png)
+
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
+
+### Task 03 Docker Image Built
+
+![Task 03 Docker Image Built](../screenshots/task-03-microservice/task-03-docker-image-built.png)
+
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
+
+### Task 03 Docker Container Running
+
+![Task 03 Docker Container Running](../screenshots/task-03-microservice/task-03-docker-container-running.png)
+
+Caption: Task 03 sample microservice endpoint, Docker image, and runtime validation evidence.
+
+## 🎉 Key Outcomes
+
+The sample microservice was implemented, containerized, and validated locally before being used in CI/CD and GitOps workflows.
+
+## 📚 Lessons Learned
+
+A small service with health and metrics endpoints is useful for validating the full platform lifecycle without adding unnecessary application complexity.
+
+## 🏁 Conclusion
+
+The Task 03 - Sample Microservice Development phase is complete and validated with documented operational evidence.

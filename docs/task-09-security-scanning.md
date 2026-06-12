@@ -1,12 +1,22 @@
-# Task 09 - Security Scanning and Compliance
+# 🚀 Task 09 - Security Scanning and Compliance
 
-## Objective
+## 🎯 Objective
 
 Implement and validate security scanning for the GitOps platform using Trivy.
 
 This task verifies local security scanning capabilities for container images, repository filesystem content, Kubernetes platform workloads, and exported security reports that can be reviewed as operational evidence.
 
-## Prerequisites
+## 📖 Background
+
+Security scanning was added to validate container image risk, repository filesystem content, live cluster context, and report export evidence.
+
+## 🏗️ Architecture Diagram
+
+![Task 09 - Security Scanning and Compliance Diagram](../diagrams/task-09-security-scanning-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 09 - security scanning and compliance.
+
+## 📋 Prerequisites
 
 The following prerequisites were required before completing this task:
 
@@ -17,22 +27,7 @@ The following prerequisites were required before completing this task:
 * Monitoring stack deployed in the `monitoring` namespace.
 * Repository available locally for filesystem scanning and report export.
 
-## Commands Executed
-
-The following commands were executed during Task 09:
-
-```bash
-trivy --version
-trivy k8s kind-gitops-platform --report summary
-trivy image holuphilix/sample-microservice:latest
-trivy fs .
-kubectl get pods -A
-mkdir -p security-reports
-trivy image holuphilix/sample-microservice:latest > security-reports/task-09-image-scan.txt
-trivy fs . > security-reports/task-09-filesystem-scan.txt
-```
-
-## Implementation Steps
+## ⚙️ Implementation Steps
 
 ### Step 1: Verify Trivy Installation
 
@@ -181,7 +176,35 @@ The report export evidence confirms that image and filesystem scan results were 
 
 Caption: Trivy image and filesystem scan output exported into task-specific security report files
 
-## Validation
+## Task Summary
+Task 09 completed security scanning validation for the GitOps platform.
+
+Completed work:
+
+* Verified Trivy installation.
+* Attempted Kubernetes security scanning and documented the local Kind timeout limitation.
+* Scanned the sample microservice container image.
+* Scanned the repository filesystem.
+* Validated Kubernetes workloads across platform and application namespaces.
+* Exported image and filesystem scan reports.
+* Captured screenshot evidence for security validation.
+
+## ⚙️ Commands Executed
+
+The following commands were executed during Task 09:
+
+```bash
+trivy --version
+trivy k8s kind-gitops-platform --report summary
+trivy image holuphilix/sample-microservice:latest
+trivy fs .
+kubectl get pods -A
+mkdir -p security-reports
+trivy image holuphilix/sample-microservice:latest > security-reports/task-09-image-scan.txt
+trivy fs . > security-reports/task-09-filesystem-scan.txt
+```
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -231,11 +254,37 @@ This provided platform context for the security scan evidence.
 
 The image and filesystem scan outputs were exported into the `security-reports` directory for persistent review.
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide operational evidence for Trivy image scanning, Trivy filesystem scanning, Kubernetes workload validation, and security report export.
+### Task 09 Trivy Image Scan
 
-## Lessons Learned
+![Task 09 Trivy Image Scan](../screenshots/task-09-security-scanning/task-09-trivy-image-scan.png)
+
+Caption: Task 09 Trivy image scan, filesystem scan, cluster validation, and report export evidence.
+
+### Task 09 Trivy Filesystem Scan
+
+![Task 09 Trivy Filesystem Scan](../screenshots/task-09-security-scanning/task-09-trivy-filesystem-scan.png)
+
+Caption: Task 09 Trivy image scan, filesystem scan, cluster validation, and report export evidence.
+
+### Task 09 Cluster Security Validation
+
+![Task 09 Cluster Security Validation](../screenshots/task-09-security-scanning/task-09-cluster-security-validation.png)
+
+Caption: Task 09 Trivy image scan, filesystem scan, cluster validation, and report export evidence.
+
+### Task 09 Security Report Export
+
+![Task 09 Security Report Export](../screenshots/task-09-security-scanning/task-09-security-report-export.png)
+
+Caption: Task 09 Trivy image scan, filesystem scan, cluster validation, and report export evidence.
+
+## 🎉 Key Outcomes
+
+Security scanning validation was completed with Trivy image scan evidence, filesystem scan evidence, cluster workload validation, and exported reports.
+
+## 📚 Lessons Learned
 
 Container image vulnerability scanning is an important control for identifying risks in base images and application dependencies before workloads are promoted through GitOps environments.
 
@@ -247,16 +296,6 @@ Security validation in GitOps environments should include both application artif
 
 Kubernetes security scanning in local Kind clusters may have limitations because node-level collection can depend on runtime access and local resource behavior that differ from production Kubernetes environments.
 
-## Task Summary
+## 🏁 Conclusion
 
-Task 09 completed security scanning validation for the GitOps platform.
-
-Completed work:
-
-* Verified Trivy installation.
-* Attempted Kubernetes security scanning and documented the local Kind timeout limitation.
-* Scanned the sample microservice container image.
-* Scanned the repository filesystem.
-* Validated Kubernetes workloads across platform and application namespaces.
-* Exported image and filesystem scan reports.
-* Captured screenshot evidence for security validation.
+The Task 09 - Security Scanning and Compliance phase is complete and validated with documented operational evidence.

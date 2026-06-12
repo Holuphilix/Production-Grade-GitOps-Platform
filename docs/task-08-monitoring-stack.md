@@ -1,43 +1,29 @@
-# Task 08 - Monitoring and Observability
+# 🚀 Task 08 - Monitoring and Observability
 
-## Objective
+## 🎯 Objective
 
 Implement a Kubernetes monitoring and observability stack using Helm and the `kube-prometheus-stack` chart.
 
 This task adds platform-level visibility for the Kind Kubernetes cluster, ArgoCD-managed application namespaces, and core monitoring components using Prometheus, Grafana, Alertmanager, Node Exporter, Kube State Metrics, and the Prometheus Operator.
 
-## Monitoring Stack Components
+## 📖 Background
 
-The monitoring stack was implemented with the Prometheus Community Helm chart for `kube-prometheus-stack`.
+Monitoring and observability were added so platform health, namespace metrics, and Prometheus scrape status could be validated.
 
-Implemented components:
+## 🏗️ Architecture Diagram
 
-* Helm
-* kube-prometheus-stack
-* Prometheus
-* Grafana
-* Alertmanager
-* Node Exporter
-* Kube State Metrics
-* Prometheus Operator
+![Task 08 - Monitoring and Observability Diagram](../diagrams/task-08-monitoring-stack-diagram.png)
 
-## Why kube-prometheus-stack?
+This diagram summarizes the workflow and technical scope for task 08 - monitoring and observability.
 
-The `kube-prometheus-stack` chart provides a production-style monitoring foundation for Kubernetes.
+## 📋 Prerequisites
 
-It packages Prometheus, Grafana, Alertmanager, exporters, dashboards, service discovery, and the Prometheus Operator into a repeatable Helm-based installation.
+* Kind cluster running.
+* Helm installed.
+* `kubectl` configured.
+* Monitoring namespace available or ready to create.
 
-This approach provides:
-
-* Kubernetes-native metrics collection
-* Preconfigured Grafana dashboards
-* Prometheus target discovery
-* Alertmanager integration
-* Node-level metrics through Node Exporter
-* Kubernetes object metrics through Kube State Metrics
-* Operator-managed Prometheus resources
-
-## Implementation Steps
+## ⚙️ Implementation Steps
 
 ### Step 1: Create Monitoring Namespace
 
@@ -138,8 +124,36 @@ The service validation confirms that the monitoring stack exposed the required K
 
 Caption: Monitoring namespace services exposing Grafana, Prometheus, Alertmanager, Kube State Metrics, Node Exporter, and operated endpoints
 
-## Grafana Access and Dashboard Verification
+## Monitoring Stack Components
+The monitoring stack was implemented with the Prometheus Community Helm chart for `kube-prometheus-stack`.
 
+Implemented components:
+
+* Helm
+* kube-prometheus-stack
+* Prometheus
+* Grafana
+* Alertmanager
+* Node Exporter
+* Kube State Metrics
+* Prometheus Operator
+
+## Why kube-prometheus-stack?
+The `kube-prometheus-stack` chart provides a production-style monitoring foundation for Kubernetes.
+
+It packages Prometheus, Grafana, Alertmanager, exporters, dashboards, service discovery, and the Prometheus Operator into a repeatable Helm-based installation.
+
+This approach provides:
+
+* Kubernetes-native metrics collection
+* Preconfigured Grafana dashboards
+* Prometheus target discovery
+* Alertmanager integration
+* Node-level metrics through Node Exporter
+* Kubernetes object metrics through Kube State Metrics
+* Operator-managed Prometheus resources
+
+## Grafana Access and Dashboard Verification
 Grafana was accessed locally using Kubernetes port forwarding.
 
 Command used:
@@ -173,7 +187,6 @@ The cluster overview dashboard confirms that Kubernetes cluster metrics were ava
 Caption: Grafana Kubernetes cluster overview showing CPU, memory, namespace, pod, and workload metrics collected from Prometheus
 
 ## Namespace Metrics Validation
-
 Namespace-level Grafana dashboards were validated for the application environments created in the previous GitOps phases.
 
 Validated namespaces:
@@ -209,7 +222,6 @@ The production namespace dashboard confirms that Grafana can display pod-level m
 Caption: Grafana namespace dashboard showing CPU metrics for sample microservice pods in the `prod` namespace
 
 ## Prometheus Validation
-
 Prometheus was accessed locally using Kubernetes port forwarding.
 
 Command used:
@@ -259,7 +271,11 @@ The query validation confirms that Prometheus returned target availability metri
 
 Caption: Prometheus `up` query results showing scrape health data for Kubernetes and monitoring targets
 
-## Validation
+## ⚙️ Commands Executed
+
+Commands executed are documented in the implementation sections below, including namespace creation, Helm repository setup, Helm installation, pod/service validation, and port-forward access.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -299,12 +315,72 @@ Prometheus was accessed successfully through local port forwarding.
 
 The Targets page confirmed that monitoring targets were discoverable and reachable, and the `up` query returned target availability metrics.
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide operational evidence for monitoring namespace workloads, monitoring services, Grafana dashboard access, cluster metrics, namespace metrics, Prometheus target health, and Prometheus query validation.
+### Task 08 Monitoring Stack Pods
 
-## Lessons Learned
+![Task 08 Monitoring Stack Pods](../screenshots/task-08-monitoring-stack/task-08-monitoring-stack-pods.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Monitoring Stack Services
+
+![Task 08 Monitoring Stack Services](../screenshots/task-08-monitoring-stack/task-08-monitoring-stack-services.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Grafana Dashboard Home
+
+![Task 08 Grafana Dashboard Home](../screenshots/task-08-monitoring-stack/task-08-grafana-dashboard-home.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Grafana Cluster Overview
+
+![Task 08 Grafana Cluster Overview](../screenshots/task-08-monitoring-stack/task-08-grafana-cluster-overview.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Dev Namespace Metrics
+
+![Task 08 Dev Namespace Metrics](../screenshots/task-08-monitoring-stack/task-08-dev-namespace-metrics.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Staging Namespace Metrics
+
+![Task 08 Staging Namespace Metrics](../screenshots/task-08-monitoring-stack/task-08-staging-namespace-metrics.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Production Namespace Metrics
+
+![Task 08 Production Namespace Metrics](../screenshots/task-08-monitoring-stack/task-08-production-namespace-metrics.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Prometheus Targets
+
+![Task 08 Prometheus Targets](../screenshots/task-08-monitoring-stack/task-08-prometheus-targets.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+### Task 08 Prometheus Query Results
+
+![Task 08 Prometheus Query Results](../screenshots/task-08-monitoring-stack/task-08-prometheus-query-results.png)
+
+Caption: Task 08 monitoring stack, Grafana, Prometheus target, and namespace metrics validation evidence.
+
+## 🎉 Key Outcomes
+
+The monitoring stack was installed and validated with Grafana dashboards, Prometheus targets, namespace metrics, and `up` query results.
+
+## 📚 Lessons Learned
 
 The `kube-prometheus-stack` chart provides a complete Kubernetes observability baseline with minimal manual configuration.
 
 Combining Prometheus target validation with Grafana dashboard checks gives both raw metric verification and practical visual confirmation that the platform is observable.
+
+## 🏁 Conclusion
+
+The Task 08 - Monitoring and Observability phase is complete and validated with documented operational evidence.

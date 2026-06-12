@@ -1,35 +1,27 @@
-# Task 01 - Local Kubernetes Platform Setup with Kind
+# 🚀 Task 01 - Local Kubernetes Platform Setup with Kind
 
-## Objective
+## 🎯 Objective
 
 Provision a production-style local Kubernetes environment using Kind (Kubernetes in Docker) to serve as the foundational platform for GitOps deployment, observability, and security tooling.
 
-## Why Kind?
+## 📖 Background
 
-Kind provides a lightweight, reproducible Kubernetes environment that runs entirely within Docker containers. It enables local platform engineering workflows without requiring cloud infrastructure.
+Kind was used to create a local Kubernetes platform that can run ArgoCD, monitoring components, and application workloads without requiring a cloud provider.
 
-For this project, Kind is used to simulate a multi-node Kubernetes cluster capable of hosting ArgoCD, Prometheus, Grafana, Alertmanager, and application workloads.
+## 🏗️ Architecture Diagram
 
-## Cluster Architecture
+![Task 01 - Local Kubernetes Platform Setup with Kind Diagram](../diagrams/task-01-kind-cluster-diagram.png)
 
-Control Plane Nodes:
-1
+This diagram summarizes the workflow and technical scope for task 01 - local kubernetes platform setup with kind.
 
-Worker Nodes:
-2
-
-Total Nodes:
-3
-
-## Prerequisites
+## 📋 Prerequisites
 
 * Docker
 * Kind
 * kubectl
 * Helm
-* Terraform
 
-## Implementation Steps
+## ⚙️ Implementation Steps
 
 ### Step 1: Verify Local Tooling
 
@@ -39,7 +31,6 @@ The following tools were verified before cluster provisioning:
 * kubectl v1.35.5
 * Docker v29.5.3
 * Helm v3.21.0
-* Terraform v1.15.5
 
 ### Step 2: Create Kind Cluster Configuration
 
@@ -99,7 +90,26 @@ Validation confirmed:
 * Worker nodes successfully joined the cluster.
 * Networking and storage components initialized successfully.
 
-## Validation
+## Why Kind?
+Kind provides a lightweight, reproducible Kubernetes environment that runs entirely within Docker containers. It enables local platform engineering workflows without requiring cloud infrastructure.
+
+For this project, Kind is used to simulate a multi-node Kubernetes cluster capable of hosting ArgoCD, Prometheus, Grafana, Alertmanager, and application workloads.
+
+## Cluster Architecture
+Control Plane Nodes:
+1
+
+Worker Nodes:
+2
+
+Total Nodes:
+3
+
+## ⚙️ Commands Executed
+
+Primary commands are documented in the implementation and validation sections below, including Kind cluster creation, node validation, and Kubernetes pod validation.
+
+## ✅ Validation
 
 The Kind cluster was successfully deployed with:
 
@@ -114,14 +124,44 @@ kubectl get nodes
 kubectl get pods -A
 docker ps
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded in the implementation and validation sections above provide evidence for cluster creation, node-level verification, and Kubernetes system component health.
+### Project Documentation Structure
 
-## Lessons Learned
+![Project Documentation Structure](../screenshots/task-01-kind-cluster/project-documentation-structure.png)
+
+Caption: Task 01 Kind cluster setup and Kubernetes validation evidence.
+
+### Task 01 Kind Cluster Created
+
+![Task 01 Kind Cluster Created](../screenshots/task-01-kind-cluster/task-01-kind-cluster-created.png)
+
+Caption: Task 01 Kind cluster setup and Kubernetes validation evidence.
+
+### Task 01 Kind Docker Nodes
+
+![Task 01 Kind Docker Nodes](../screenshots/task-01-kind-cluster/task-01-kind-docker-nodes.png)
+
+Caption: Task 01 Kind cluster setup and Kubernetes validation evidence.
+
+### Task 01 Cluster System Pods
+
+![Task 01 Cluster System Pods](../screenshots/task-01-kind-cluster/task-01-cluster-system-pods.png)
+
+Caption: Task 01 Kind cluster setup and Kubernetes validation evidence.
+
+## 🎉 Key Outcomes
+
+A local multi-node Kind cluster was created and validated as the foundation for the GitOps platform.
+
+## 📚 Lessons Learned
 
 During initial cluster creation, worker nodes failed to join due to a Kubernetes node image version mismatch.
 
 The cluster configuration was simplified to allow Kind to manage node image selection automatically, resulting in a successful multi-node cluster deployment.
 
 This reinforced the importance of maintaining Kubernetes version consistency across cluster nodes.
+
+## 🏁 Conclusion
+
+The Task 01 - Local Kubernetes Platform Setup with Kind phase is complete and validated with documented operational evidence.

@@ -1,22 +1,29 @@
-# Task 02 - ArgoCD Installation and Configuration
+# 🚀 Task 02 - ArgoCD Installation and Configuration
 
-## Objective
+## 🎯 Objective
 
 Install and configure ArgoCD as the GitOps controller for the Kubernetes platform.
 
 ArgoCD will continuously monitor the GitOps repository and synchronize Kubernetes resources automatically, enabling a declarative deployment workflow.
 
-## Why ArgoCD?
+## 📖 Background
 
-ArgoCD provides:
+ArgoCD provides the GitOps reconciliation layer for the platform by continuously comparing Git-defined desired state with live Kubernetes resources.
 
-* Continuous synchronization between Git and Kubernetes
-* Automated deployment reconciliation
-* Deployment visibility
-* Rollback capabilities
-* GitOps-based change management
+## 🏗️ Architecture Diagram
 
-## Implementation Steps
+![Task 02 - ArgoCD Installation and Configuration Diagram](../diagrams/task-02-argocd-installation-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 02 - argocd installation and configuration.
+
+## 📋 Prerequisites
+
+* Kind cluster running.
+* `kubectl` configured for the `gitops-platform` cluster.
+* Required platform namespaces planned.
+* Internet access available for the ArgoCD installation manifest.
+
+## ⚙️ Implementation Steps
 
 ### Step 1: Prepare Platform Namespaces
 
@@ -93,7 +100,20 @@ The ArgoCD pod validation confirmed that all controller, server, repository, Red
 
 Caption: ArgoCD Components Running Successfully
 
-## Validation
+## Why ArgoCD?
+ArgoCD provides:
+
+* Continuous synchronization between Git and Kubernetes
+* Automated deployment reconciliation
+* Deployment visibility
+* Rollback capabilities
+* GitOps-based change management
+
+## ⚙️ Commands Executed
+
+Commands executed are documented in the implementation and validation sections below, including namespace creation, ArgoCD installation, pod validation, and dashboard port forwarding.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -153,10 +173,36 @@ The dashboard validation confirmed that the ArgoCD UI was reachable through the 
 
 Caption: ArgoCD Dashboard Access Validation
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide validation evidence for namespace preparation, ArgoCD component readiness, and dashboard access.
+### Task 02 Platform Namespaces
 
-## Lessons Learned
+![Task 02 Platform Namespaces](../screenshots/task-02-argocd/task-02-platform-namespaces.png)
 
-To be completed during implementation.
+Caption: Task 02 ArgoCD installation and dashboard access validation evidence.
+
+### Task 02 Argocd Components Running
+
+![Task 02 Argocd Components Running](../screenshots/task-02-argocd/task-02-argocd-components-running.png)
+
+Caption: Task 02 ArgoCD installation and dashboard access validation evidence.
+
+### Task 02 Argocd Dashboard Login
+
+![Task 02 Argocd Dashboard Login](../screenshots/task-02-argocd/task-02-argocd-dashboard-login.png)
+
+Caption: Task 02 ArgoCD installation and dashboard access validation evidence.
+
+## 🎉 Key Outcomes
+
+ArgoCD was installed successfully and validated as the GitOps controller for the platform.
+
+## 📚 Lessons Learned
+
+ArgoCD provides a clear operational boundary between Git-defined desired state and live Kubernetes resources.
+
+Validating namespaces, controller pods, and dashboard access early created confidence for later GitOps deployment phases.
+
+## 🏁 Conclusion
+
+The Task 02 - ArgoCD Installation and Configuration phase is complete and validated with documented operational evidence.

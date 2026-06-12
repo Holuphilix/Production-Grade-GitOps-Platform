@@ -1,34 +1,29 @@
-# Task 04 - GitHub Actions CI Pipeline
+# 🚀 Task 04 - GitHub Actions CI Pipeline
 
-## Objective
+## 🎯 Objective
 
 Implement a production-style CI pipeline using GitHub Actions.
 
 The pipeline will automatically validate application code, perform security scanning, build a Docker image, and publish the image to Docker Hub.
 
-## Pipeline Stages
+## 📖 Background
 
-1. Source Code Checkout
-2. Node.js Environment Setup
-3. Dependency Installation
-4. Application Testing
-5. Trivy Filesystem Security Scan
-6. Docker Image Build
-7. Trivy Container Image Scan
-8. Docker Hub Authentication
-9. Docker Image Publication
+The CI pipeline validates application quality and packaging before deployment configuration is synchronized by the GitOps platform.
 
-## Why This Pipeline?
+## 🏗️ Architecture Diagram
 
-The CI pipeline provides:
+![Task 04 - GitHub Actions CI Pipeline Diagram](../diagrams/task-04-github-actions-diagram.png)
 
-* Automated validation
-* Security scanning
-* Consistent image creation
-* Repeatable deployments
-* Reduced deployment risk
+This diagram summarizes the workflow and technical scope for task 04 - github actions ci pipeline.
 
-## Implementation Steps
+## 📋 Prerequisites
+
+* Sample microservice repository available.
+* GitHub Actions enabled.
+* Docker Hub repository available.
+* Docker Hub credentials configured as GitHub secrets.
+
+## ⚙️ Implementation Steps
 
 ### Step 1: Create GitHub Actions Workflow
 
@@ -76,7 +71,31 @@ The Docker Hub repository evidence confirms that the CI pipeline published image
 
 Caption: Docker Hub repository tags published by the GitHub Actions workflow
 
-## Validation
+## Pipeline Stages
+1. Source Code Checkout
+2. Node.js Environment Setup
+3. Dependency Installation
+4. Application Testing
+5. Trivy Filesystem Security Scan
+6. Docker Image Build
+7. Trivy Container Image Scan
+8. Docker Hub Authentication
+9. Docker Image Publication
+
+## Why This Pipeline?
+The CI pipeline provides:
+
+* Automated validation
+* Security scanning
+* Consistent image creation
+* Repeatable deployments
+* Reduced deployment risk
+
+## ⚙️ Commands Executed
+
+Pipeline commands are represented by the GitHub Actions workflow stages documented below, including build, test, Trivy scans, Docker build, and Docker push operations.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -88,10 +107,36 @@ The following validation checks were performed:
 * Docker image push to Docker Hub completed successfully.
 * Docker Hub repository tags were verified.
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded in the implementation sections above provide operational evidence for workflow execution, build and test validation, Trivy filesystem scanning, Docker image creation, Trivy image scanning, Docker Hub publication, and repository tag verification.
+### Task 04 Build Test Scan Success
 
-## Lessons Learned
+![Task 04 Build Test Scan Success](../screenshots/task-04-github-actions/task-04-build-test-scan-success.png)
 
-To be completed during implementation.
+Caption: Task 04 CI pipeline, image build, scan, push, and Docker Hub validation evidence.
+
+### Task 04 Docker Build Push Success
+
+![Task 04 Docker Build Push Success](../screenshots/task-04-github-actions/task-04-docker-build-push-success.png)
+
+Caption: Task 04 CI pipeline, image build, scan, push, and Docker Hub validation evidence.
+
+### Task 04 Dockerhub Image Tags
+
+![Task 04 Dockerhub Image Tags](../screenshots/task-04-github-actions/task-04-dockerhub-image-tags.png)
+
+Caption: Task 04 CI pipeline, image build, scan, push, and Docker Hub validation evidence.
+
+## 🎉 Key Outcomes
+
+The GitHub Actions CI workflow completed successfully and published validated container images to Docker Hub.
+
+## 📚 Lessons Learned
+
+CI validation is most useful when build, test, security scanning, image creation, and registry publication are handled as one repeatable workflow.
+
+Publishing validated images to Docker Hub creates a reliable handoff point for downstream GitOps deployment automation.
+
+## 🏁 Conclusion
+
+The Task 04 - GitHub Actions CI Pipeline phase is complete and validated with documented operational evidence.

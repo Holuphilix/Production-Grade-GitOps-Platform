@@ -1,13 +1,31 @@
-# Task 07 - Multi-Environment Management
+# 🚀 Task 07 - Multi-Environment Management
 
-## Objective
+## 🎯 Objective
 
 Implement and validate multi-environment GitOps deployments using Kustomize, ArgoCD, and Kubernetes.
 
-This task extends the GitOps platform from a single `dev` deployment into separate `dev`, `staging`, and `prod` environments, each managed declaratively through Git and synchronized into Kubernetes by ArgoCD.
+## 📖 Background
+
+This task expanded the GitOps platform from a single deployment target to independent `dev`, `staging`, and `prod` environments.
+
+## 🏗️ Architecture Diagram
+
+![Task 07 - Multi-Environment Management Diagram](../diagrams/task-07-kustomize-environments-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 07 - multi-environment management.
+
+## 📋 Prerequisites
+
+* Kustomize base manifests available.
+* ArgoCD installed and configured.
+* `dev`, `staging`, and `prod` namespaces available.
+* GitOps repository connected to ArgoCD.
+
+## ⚙️ Implementation Steps
+
+Implementation details are documented in the task-specific sections below.
 
 ## Multi-Environment GitOps Strategy
-
 The multi-environment deployment model uses:
 
 * Kustomize for base and overlay configuration management
@@ -17,7 +35,6 @@ The multi-environment deployment model uses:
 Each environment has its own Kustomize overlay and ArgoCD Application, allowing the same application base configuration to be deployed with environment-specific settings.
 
 ## Environment Deployments
-
 Three environments were created and deployed:
 
 * `dev`
@@ -27,7 +44,6 @@ Three environments were created and deployed:
 Each environment is deployed into its own Kubernetes namespace and managed by a dedicated ArgoCD Application.
 
 ## Namespace Refactor
-
 The Kustomize configuration was refactored to remove hardcoded namespace ownership from the base layer.
 
 Refactor completed:
@@ -41,7 +57,6 @@ This change allows the same base manifests to be reused safely across `dev`, `st
 The base layer now defines shared application resources, while each overlay controls the namespace and environment-specific deployment behavior.
 
 ## Environment-Specific Replica Counts
-
 Replica counts were configured independently for each environment.
 
 | Environment | Replica Count | Purpose |
@@ -53,7 +68,6 @@ Replica counts were configured independently for each environment.
 These replica counts are enforced through Kustomize overlays and reconciled into Kubernetes by ArgoCD.
 
 ## ArgoCD Application Deployment
-
 Dedicated ArgoCD Applications were created for each environment:
 
 * `sample-microservice`
@@ -73,7 +87,6 @@ The ArgoCD validation confirms that all environment Applications were created su
 Caption: ArgoCD Applications for dev, staging, and prod showing `Synced` synchronization state and `Healthy` workload status
 
 ## ArgoCD Multi-Environment Visualization
-
 The ArgoCD dashboard provides a visual view of the multi-environment GitOps deployment model.
 
 From a single GitOps repository, ArgoCD manages independent Applications for `dev`, `staging`, and `prod`. Each Application tracks its own Kustomize overlay, deploys into its own Kubernetes namespace, and reconciles its own workload resources while still following the same shared base configuration.
@@ -111,7 +124,6 @@ The production topology view shows the `prod-microservice` Application managing 
 Caption: ArgoCD topology for the production Application showing the prod namespace, service, deployment, replica set, and pods managed through GitOps
 
 ## Dev Environment Deployment
-
 The `dev` environment was deployed through its Kustomize overlay into the `dev` namespace.
 
 The dev overlay enforces:
@@ -128,7 +140,6 @@ The dev namespace validation confirms that the environment deployed successfully
 Caption: Dev namespace running two ready sample microservice pods from the environment-specific Kustomize overlay
 
 ## Staging Environment Deployment
-
 The `staging` environment was deployed through its Kustomize overlay into the `staging` namespace.
 
 The staging overlay enforces:
@@ -145,7 +156,6 @@ The staging namespace validation confirms that the environment deployed successf
 Caption: Staging namespace running two ready sample microservice pods from the staging Kustomize overlay
 
 ## Production Environment Deployment
-
 The `prod` environment was deployed through its Kustomize overlay into the `prod` namespace.
 
 The prod overlay enforces:
@@ -161,7 +171,11 @@ The production namespace validation confirms that the environment deployed succe
 
 Caption: Production namespace running three ready sample microservice pods from the production Kustomize overlay
 
-## Validation
+## ⚙️ Commands Executed
+
+Commands executed are reflected in the validation evidence below, including ArgoCD Application checks and namespace-specific pod validation.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -208,12 +222,66 @@ The synchronized and healthy ArgoCD Applications confirm that GitOps synchroniza
 
 ArgoCD reconciled the environment overlays into Kubernetes without requiring environment-specific manual deployment commands.
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide operational evidence for multi-environment ArgoCD Application creation, successful synchronization, healthy application state, ArgoCD dashboard visualization, application topology views, namespace-specific deployments, and environment-specific replica enforcement.
+### Task 07 Argocd Multi Environment Applications
 
-## Lessons Learned
+![Task 07 Argocd Multi Environment Applications](../screenshots/task-07-multi-environment/task-07-argocd-multi-environment-applications.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Argocd Multi Environment Dashboard
+
+![Task 07 Argocd Multi Environment Dashboard](../screenshots/task-07-multi-environment/task-07-argocd-multi-environment-dashboard.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Dev Application Topology
+
+![Task 07 Dev Application Topology](../screenshots/task-07-multi-environment/task-07-dev-application-topology.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Dev Environment Pods
+
+![Task 07 Dev Environment Pods](../screenshots/task-07-multi-environment/task-07-dev-environment-pods.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Staging Application Topology
+
+![Task 07 Staging Application Topology](../screenshots/task-07-multi-environment/task-07-staging-application-topology.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Staging Environment Pods
+
+![Task 07 Staging Environment Pods](../screenshots/task-07-multi-environment/task-07-staging-environment-pods.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Production Application Topology
+
+![Task 07 Production Application Topology](../screenshots/task-07-multi-environment/task-07-production-application-topology.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+### Task 07 Production Environment Pods
+
+![Task 07 Production Environment Pods](../screenshots/task-07-multi-environment/task-07-production-environment-pods.png)
+
+Caption: Task 07 multi-environment ArgoCD, topology, and namespace pod validation evidence.
+
+## 🎉 Key Outcomes
+
+Multi-environment GitOps deployment was completed across dev, staging, and production namespaces with enforced replica counts.
+
+## 📚 Lessons Learned
 
 Keeping the Kustomize base environment-agnostic makes the configuration reusable and easier to promote across environments.
 
 Moving namespace ownership into overlays provides cleaner separation between shared application resources and environment-specific deployment concerns.
+
+## 🏁 Conclusion
+
+The Task 07 - Multi-Environment Management phase is complete and validated with documented operational evidence.

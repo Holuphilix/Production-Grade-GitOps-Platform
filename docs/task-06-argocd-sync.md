@@ -1,13 +1,31 @@
-# Task 06 - Automated GitOps Deployments
+# 🚀 Task 06 - Automated GitOps Deployments
 
-## Objective
+## 🎯 Objective
 
 Validate the automated GitOps deployment workflow by changing the desired state in Git and allowing ArgoCD to synchronize the Kubernetes cluster automatically.
 
-This task proves that deployment changes are delivered through the GitOps repository and ArgoCD reconciliation loop rather than by manually applying Kubernetes manifests to the cluster.
+## 📖 Background
+
+This task validated the GitOps reconciliation loop by changing desired state in Git and allowing ArgoCD to apply the change automatically.
+
+## 🏗️ Architecture Diagram
+
+![Task 06 - Automated GitOps Deployments Diagram](../diagrams/task-06-argocd-sync-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 06 - automated gitops deployments.
+
+## 📋 Prerequisites
+
+* ArgoCD Application configured.
+* GitOps repository connected to ArgoCD.
+* Sample microservice running in `dev`.
+* Automated sync enabled.
+
+## ⚙️ Implementation Steps
+
+Implementation details are documented in the task-specific sections below.
 
 ## GitOps Deployment Validation Process
-
 The validation process used a controlled replica-count change in the `dev` Kustomize overlay.
 
 Validation flow:
@@ -22,7 +40,6 @@ Validation flow:
 This confirms that Git remains the source of truth and that ArgoCD is responsible for applying the desired state to the cluster.
 
 ## Replica Patch Change
-
 The `dev` overlay replica patch was updated to increase the sample microservice from one replica to two replicas.
 
 File updated:
@@ -46,7 +63,6 @@ replicas: 2
 This change represents the desired Kubernetes state for the `dev` environment. No direct cluster modification was required.
 
 ## Git Commit and Push
-
 After updating `overlays/dev/replica-patch.yaml`, the change was committed and pushed to GitHub.
 
 The Git push made the new desired state available to ArgoCD through the configured GitOps repository source.
@@ -58,7 +74,6 @@ Validation purpose:
 * Confirms ArgoCD could detect the change through its repository polling and reconciliation process.
 
 ## ArgoCD Automatic Detection and Synchronization
-
 ArgoCD detected the Git repository change and synchronized the Application automatically.
 
 The Application remained in the expected operational state after reconciliation:
@@ -77,7 +92,6 @@ The ArgoCD validation confirms that the `sample-microservice` Application remain
 Caption: ArgoCD Application status showing `Synced` and `Healthy` after automatic GitOps reconciliation
 
 ## Kubernetes Deployment Scaling
-
 After ArgoCD synchronized the updated desired state, Kubernetes scaled the deployment from one replica to two replicas.
 
 The deployment validation showed:
@@ -97,7 +111,6 @@ The deployment validation confirms that Kubernetes scaled the sample microservic
 Caption: Kubernetes deployment scaled automatically to `2/2` ready replicas after ArgoCD synchronization
 
 ## Pod-Level Runtime Validation
-
 The `dev` namespace was validated after synchronization to confirm that two sample microservice pods were running.
 
 The pod validation showed two running pods with ready container status:
@@ -115,7 +128,11 @@ The pod validation confirms that two sample microservice pods are running succes
 
 Caption: Two sample microservice pods running in the `dev` namespace after automated GitOps deployment
 
-## Validation
+## ⚙️ Commands Executed
+
+Commands executed are documented below, including the replica patch update, Git commit/push workflow, ArgoCD status validation, deployment validation, and pod validation.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -151,12 +168,36 @@ No manual `kubectl apply` command was executed for this deployment change.
 
 The only configuration change was made in the GitOps repository and delivered through the ArgoCD automated synchronization workflow.
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide operational evidence for ArgoCD repository-change detection, automated synchronization, healthy application state, successful deployment scaling, and two running pods in the `dev` namespace.
+### Task 06 Argocd Auto Sync
 
-## Lessons Learned
+![Task 06 Argocd Auto Sync](../screenshots/task-06-gitops-deployments/task-06-argocd-auto-sync.png)
+
+Caption: Task 06 automated ArgoCD synchronization and Kubernetes scaling validation evidence.
+
+### Task 06 Deployment Scaled
+
+![Task 06 Deployment Scaled](../screenshots/task-06-gitops-deployments/task-06-deployment-scaled.png)
+
+Caption: Task 06 automated ArgoCD synchronization and Kubernetes scaling validation evidence.
+
+### Task 06 Two Replicas Running
+
+![Task 06 Two Replicas Running](../screenshots/task-06-gitops-deployments/task-06-two-replicas-running.png)
+
+Caption: Task 06 automated ArgoCD synchronization and Kubernetes scaling validation evidence.
+
+## 🎉 Key Outcomes
+
+ArgoCD automatically synchronized the Git change and Kubernetes scaled the dev deployment from one replica to two replicas.
+
+## 📚 Lessons Learned
 
 Automated GitOps deployments provide a clear separation between declaring desired state in Git and applying that state to Kubernetes.
 
 ArgoCD keeps the cluster aligned with the GitOps repository, enabling controlled deployment changes without direct manual application of Kubernetes manifests.
+
+## 🏁 Conclusion
+
+The Task 06 - Automated GitOps Deployments phase is complete and validated with documented operational evidence.

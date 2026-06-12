@@ -1,13 +1,33 @@
-# Task 05 - GitOps Repository Configuration
+# 🚀 Task 05 - GitOps Repository Configuration
 
-## Objective
+## 🎯 Objective
 
 Create the Kubernetes deployment configuration required for GitOps-based application delivery.
 
 This task establishes the declarative Kubernetes manifests, Kustomize environment overlays, and ArgoCD Application configuration used to deploy the sample microservice from Git into the local Kind Kubernetes platform.
 
-## GitOps Configuration Scope
+## 📖 Background
 
+The GitOps repository stores the Kubernetes desired state consumed by ArgoCD. This task created reusable base manifests, Kustomize overlays, and the ArgoCD Application definition.
+
+## 🏗️ Architecture Diagram
+
+![Task 05 - GitOps Repository Configuration Diagram](../diagrams/task-05-gitops-config-diagram.png)
+
+This diagram summarizes the workflow and technical scope for task 05 - gitops repository configuration.
+
+## 📋 Prerequisites
+
+* GitOps configuration repository available.
+* Kubernetes namespaces planned.
+* ArgoCD installed.
+* Sample microservice image available from Docker Hub.
+
+## ⚙️ Implementation Steps
+
+Implementation details are documented in the task-specific sections below.
+
+## GitOps Configuration Scope
 The GitOps configuration includes:
 
 * Kubernetes base manifests
@@ -17,7 +37,6 @@ The GitOps configuration includes:
 * Automated synchronization policy
 
 ## Kubernetes Base Manifests
-
 The base manifest layer defines the shared Kubernetes resources that are reused across all environments.
 
 Base manifests created:
@@ -58,7 +77,6 @@ The base deployment validation confirms that the Kubernetes workload definition 
 Caption: Base Kubernetes manifests applied successfully and workload running in the `dev` namespace
 
 ## Kustomize Overlays
-
 Kustomize overlays were created to support separate environment configuration while keeping the shared Kubernetes resource definitions in the base layer.
 
 Overlays created:
@@ -70,7 +88,6 @@ Overlays created:
 Each overlay references the shared base and applies the appropriate replica count for that environment.
 
 ## Replica Strategy
-
 The replica strategy separates local development, staging validation, and production-style availability concerns.
 
 | Environment | Replica Count | Purpose |
@@ -90,7 +107,6 @@ The overlay validation confirms that the `dev`, `staging`, and `prod` overlays r
 Caption: Kustomize overlays rendering environment-specific replica counts for dev, staging, and prod
 
 ## ArgoCD Application Configuration
-
 An ArgoCD Application manifest was created to connect the GitOps configuration repository to the Kubernetes cluster.
 
 The Application configuration defines:
@@ -112,7 +128,6 @@ The ArgoCD Application manifest evidence confirms that the application source, d
 Caption: ArgoCD Application manifest defining the Git source, Kubernetes destination, and automated sync policy
 
 ## Automated Synchronization Settings
-
 Automated synchronization was enabled so ArgoCD can continuously reconcile the Kubernetes cluster with the desired state stored in Git.
 
 Automated sync settings configured:
@@ -144,7 +159,11 @@ The ArgoCD workload evidence confirms that ArgoCD is managing the Kubernetes res
 
 Caption: ArgoCD resource tree showing the managed workload created from the GitOps configuration
 
-## Validation
+## ⚙️ Commands Executed
+
+Commands executed are documented in the validation evidence below, including Kustomize render/apply validation and ArgoCD Application checks.
+
+## ✅ Validation
 
 The following validation checks were performed:
 
@@ -194,12 +213,60 @@ The ArgoCD dashboard evidence confirms that the Application is synchronized with
 
 Caption: ArgoCD Application status showing `Synced` synchronization state and `Healthy` workload health
 
-## Screenshots
+## 📸 Screenshots
 
-The screenshots embedded above provide operational evidence for base manifest creation, Kustomize overlay rendering, environment-specific replica validation, ArgoCD Application configuration, automated synchronization, successful deployment, Synced status, Healthy status, and the running workload in the `dev` namespace.
+### Task 05 Base Deployment Running
 
-## Lessons Learned
+![Task 05 Base Deployment Running](../screenshots/task-05-gitops-config/task-05-base-deployment-running.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Overlay Replica Validation
+
+![Task 05 Overlay Replica Validation](../screenshots/task-05-gitops-config/task-05-overlay-replica-validation.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Argocd Application Manifest
+
+![Task 05 Argocd Application Manifest](../screenshots/task-05-gitops-config/task-05-argocd-application-manifest.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Argocd Application Created
+
+![Task 05 Argocd Application Created](../screenshots/task-05-gitops-config/task-05-argocd-application-created.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Argocd Managed Workload
+
+![Task 05 Argocd Managed Workload](../screenshots/task-05-gitops-config/task-05-argocd-managed-workload.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Kustomize Apply
+
+![Task 05 Kustomize Apply](../screenshots/task-05-gitops-config/task-05-kustomize-apply.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+### Task 05 Argocd Synced Healthy
+
+![Task 05 Argocd Synced Healthy](../screenshots/task-05-gitops-config/task-05-argocd-synced-healthy.png)
+
+Caption: Task 05 GitOps configuration, Kustomize, and ArgoCD validation evidence.
+
+## 🎉 Key Outcomes
+
+The GitOps repository configuration was completed with base manifests, environment overlays, replica strategy, and automated ArgoCD synchronization settings.
+
+## 📚 Lessons Learned
 
 Kustomize overlays provide a clean separation between shared Kubernetes resource definitions and environment-specific deployment settings.
 
 ArgoCD automated synchronization with pruning and self-healing creates a reliable GitOps reconciliation loop where Git remains the source of truth for cluster state.
+
+## 🏁 Conclusion
+
+The Task 05 - GitOps Repository Configuration phase is complete and validated with documented operational evidence.
